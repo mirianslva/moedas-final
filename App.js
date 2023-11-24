@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Image } from 'react';
 import { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
@@ -10,6 +10,7 @@ import {
 import {Picker} from '@react-native-picker/picker';
 import styles from './globalStyles';
 import { AntDesign } from '@expo/vector-icons';
+import moedinha from "../../../assets/moedinha.png"
 
 export default function App() {
   const [moedaOrigem, setMoedaOrigem] = useState('BRL')
@@ -25,12 +26,9 @@ export default function App() {
       let json = await page.json()
       console.log(json)
       let indice = parseFloat(json[`${moedaOrigem}${moedaDestino}`].high)
-      // setValorConvertido(indice)
-      console.log(indice)
       let valor = parseFloat(valorOriginal)
       let resu = ((indice*valor).toFixed(2))
       setValorConvertido(resu)
-      // console.log(json[`USDBRL`].high)
     } catch (error){
       setValorConvertido(`Erro: ${error.message}`)
     }
@@ -43,11 +41,14 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
+
       <View style={styles.content}>
+      
         <Text style={styles.title}>Conversor de moedas</Text>
+        
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
       <Text style={styles.texto}>Moeda 1</Text>
-      <View style={styles.viewInpu}>
+      <View style={styles.viewInput}>
       <View style={styles.bordaEscolha}>
           <Picker
             selectedValue={moedaOrigem}
@@ -64,7 +65,7 @@ export default function App() {
       </View>
       <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
       <Text style={styles.texto}>Moeda 2</Text>
-      <View style={styles.viewInpu}>
+      <View style={styles.viewInput}>
         <View style={styles.bordaEscolha}>
           <Picker
             selectedValue={moedaDestino}
