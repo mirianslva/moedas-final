@@ -11,7 +11,7 @@ import {
 import {Picker} from '@react-native-picker/picker';
 import styles from './globalStyles';
 import { AntDesign } from '@expo/vector-icons';
-import moedinha from "./assets/moedinha.jpg"
+import moedinha from "./assets/moedinha.png"
 
 export default function App() {
   const [moedaOrigem, setMoedaOrigem] = useState('BRL')
@@ -46,12 +46,12 @@ export default function App() {
       {/* <Image source={moedinha}/> */}
       {/* <Image source={moedinha} style={{border:"1px solid black"}}/> */}
       <Image
-        style={{ flex: 1,  width: '200px', backgroundColor: '#0553'}}
+        style={{ flex: 1,  width: '100px', backgroundColor: '#0553', alignItems: 'center', justifyContent: 'center',alignSelf: 'center'}}
         source={moedinha}
       />
         <Text style={styles.title}>Conversor de moedas</Text>
         
-        <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+        <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',}}>
       <Text style={styles.texto}>Moeda 1</Text>
       <View style={styles.viewInput}>
       <View style={styles.bordaEscolha}>

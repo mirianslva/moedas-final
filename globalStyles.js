@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e0b0ff",
+    backgroundColor: "#8880BC",
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -28,14 +28,6 @@ export default styles = StyleSheet.create({
   },
   texto: {
     color: '#fff',
-  },
-  imagem: {
-    width: '25%',
-    height: '19%',
-    justifyContent: 'center',
-    alignItens: 'center',
-    alignSelf: 'center',
-    paddingTop: 50,
   },
   viewInput: {
     flexDirection: 'column',
@@ -64,6 +56,6 @@ export default styles = StyleSheet.create({
   bordaEscolha:{
     borderColor:"#fff",
     borderStyle:"solid",
-    borderRadius:9,
+    borderRadius:8,
   }
 });
