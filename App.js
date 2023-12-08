@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Image } from 'react';
-import { useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
+//import { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { Image } from 'expo-image';
 import {
   Pressable,
   Text,
@@ -10,7 +11,7 @@ import {
 import {Picker} from '@react-native-picker/picker';
 import styles from './globalStyles';
 import { AntDesign } from '@expo/vector-icons';
-import moedinha from "../../../assets/moedinha.png"
+import moedinha from "./assets/moedinha.jpg"
 
 export default function App() {
   const [moedaOrigem, setMoedaOrigem] = useState('BRL')
@@ -41,9 +42,13 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-
-      <View style={styles.content}>
-      
+ <View style={styles.content}>
+      {/* <Image source={moedinha}/> */}
+      {/* <Image source={moedinha} style={{border:"1px solid black"}}/> */}
+      <Image
+        style={{ flex: 1,  width: '200px', backgroundColor: '#0553'}}
+        source={moedinha}
+      />
         <Text style={styles.title}>Conversor de moedas</Text>
         
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
@@ -93,6 +98,7 @@ export default function App() {
       <Text style={{textAlign:'center', color:"#fff"}}>{`Resultado: ${valorConvertido}`}</Text>
       <StatusBar style="auto" />
       </View>
+     
     </View>
   );
 }
